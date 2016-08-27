@@ -1,6 +1,6 @@
 {
   "name": "angular-material-lightbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lightbox component on top of angular material",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "angular-material-lightbox",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Lightbox component on top of angular material",
   "main": "./dist/angular-material-lightbox.min.js",
   "repository": "https://github.com/alirezamirian/angular-material-lightbox",
