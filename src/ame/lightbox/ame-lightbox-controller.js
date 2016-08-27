@@ -20,7 +20,7 @@
         }
         self.loading = true;
         self.imageLoaded = imageLoaded;
-        self.currentIndex = 0;
+        self.currentIndex = Math.max(Math.min(options.initialIndex || 0,items.length-1), 0);
         self.prev = prev;
         self.next = next;
         self.imageWidth = null;

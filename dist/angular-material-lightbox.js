@@ -1,5 +1,5 @@
 /*
- * angular-material-lightbox 0.0.0
+ * ame-lightbox 0.0.2
  * Lightbox component on top of angular material
  * https://github.com/alirezamirian/angular-material-lightbox
 */
@@ -48,6 +48,7 @@
         .factory("ameLightbox", ameLightboxFactory);
 
     var defaults = {
+        initialIndex: 0,
         keyboard: true,
         targetEvent: undefined
     };
@@ -100,7 +101,7 @@
         }
         self.loading = true;
         self.imageLoaded = imageLoaded;
-        self.currentIndex = 0;
+        self.currentIndex = Math.max(Math.min(options.initialIndex || 0,items.length-1), 0);
         self.prev = prev;
         self.next = next;
         self.imageWidth = null;

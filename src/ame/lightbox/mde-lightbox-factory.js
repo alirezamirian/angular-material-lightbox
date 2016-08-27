@@ -12,6 +12,7 @@
         .factory("ameLightbox", ameLightboxFactory);
 
     var defaults = {
+        initialIndex: 0,
         keyboard: true,
         targetEvent: undefined
     };

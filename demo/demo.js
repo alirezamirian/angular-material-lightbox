@@ -30,7 +30,8 @@
                     'https://s.cafebazaar.ir/1/upload/screenshot/com.glimgames.motori24.jpg',
                     'https://cdn.myket.ir/images/xlarge/image/myket/screenshot/com.sevensen.royesh_cdbe9f13-ed44-4f7e-a2e8-76308f901ff7.png'
                 ], {
-                targetEvent: targetEvent
+                targetEvent: targetEvent,
+                initialIndex: 1
             })
         }
     }
