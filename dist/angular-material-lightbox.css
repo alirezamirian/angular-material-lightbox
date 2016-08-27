@@ -1,0 +1,104 @@
+.mde-lightbox {
+  overflow: visible;
+  max-height: calc(100% - 30px);
+  max-width: calc(100% - 30px);
+  min-width: 100px;
+  min-height: 100px;
+  padding: 10px;
+}
+
+.mde-lightbox md-dialog-content {
+  overflow: visible;
+}
+
+.mde-lightbox ._next,
+.mde-lightbox ._prev {
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+}
+
+.mde-lightbox ._next {
+  transform: rotateY(180deg);
+}
+
+html[dir=rtl] .mde-lightbox ._next {
+  transform: none;
+}
+
+html[dir=ltr] .mde-lightbox ._next {
+  right: -70px;
+}
+
+html[dir=rtl] .mde-lightbox ._next {
+  left: -70px;
+}
+
+.mde-lightbox ._prev {
+  transform: none;
+}
+
+html[dir=rtl] .mde-lightbox ._prev {
+  transform: rotateY(180deg);
+}
+
+html[dir=ltr] .mde-lightbox ._prev {
+  left: -70px;
+}
+
+html[dir=rtl] .mde-lightbox ._prev {
+  right: -70px;
+}
+
+.mde-lightbox #mde_lightbox_image {
+  transition: width 0.2s ease, height 0.2s ease;
+  display: block;
+  margin: auto;
+  min-height: 70px;
+}
+
+.mde-lightbox #mde_lightbox_image img {
+  width: 100%;
+  height: 100%;
+}
+
+.mde-lightbox #mde_lightbox_image img.ng-hide-remove,
+.mde-lightbox #mde_lightbox_image img.ng-hide-remove-active {
+  transition: opacity 0.3s ease;
+}
+
+.mde-lightbox #mde_lightbox_image img.ng-hide-remove {
+  opacity: 0;
+}
+
+.mde-lightbox #mde_lightbox_image img.ng-hide-remove-active {
+  opacity: 1;
+}
+
+.mde-lightbox md-progress-circular {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+  margin: auto;
+}
+
+.mde-lightbox ._dots {
+  position: relative;
+  top: 60px;
+  transform: scale(0.8);
+  white-space: nowrap;
+  overflow-x: auto;
+  padding-top: 30px;
+  margin-top: -60px;
+}
+
+.mde-lightbox ._dots md-radio-group {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.mde-lightbox ._dots md-radio-button {
+  display: inline-block;
+}
