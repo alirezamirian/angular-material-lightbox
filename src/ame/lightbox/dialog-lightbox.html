@@ -1,0 +1,22 @@
+<md-dialog class="mde-lightbox" aria-label="Images" ng-class="{'_loading': ctrl.loading}">
+    <md-dialog-content>
+        <md-progress-circular ng-if="ctrl.loading"></md-progress-circular>
+        <div id="mde_lightbox_image" md-swipe-left="ctrl.prev()" md-swipe-right="ctrl.next()">
+            <img ame-on-load="ctrl.imageLoaded()"
+                 ng-show="!ctrl.loading && !ctrl.resizing" ng-src="{{ctrl.items[ctrl.currentIndex].src}}"/>
+        </div>
+        <div layout="row" class="_dots">
+            <md-radio-group ng-model="ctrl.currentIndex">
+                <md-radio-button ng-repeat="item in ctrl.items" ng-value=":: $index"
+                                 aria-label="Image {{:: $index}}"></md-radio-button>
+            </md-radio-group>
+        </div>
+    </md-dialog-content>
+
+    <md-button aria-label="Next" hide-xs class="md-icon-button _next" ng-click="ctrl.next()">
+        <md-icon md-svg-icon="ame/lightbox/icons/ic_chevron_left_black_24px.svg"/>
+    </md-button>
+    <md-button aria-label="Prev" hide-xs class="md-icon-button _prev" ng-click="ctrl.prev()">
+        <md-icon md-svg-icon="ame/lightbox/icons/ic_chevron_left_black_24px.svg"/>
+    </md-button>
+</md-dialog>

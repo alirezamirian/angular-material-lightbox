@@ -1,0 +1,19 @@
+{
+  "name": "demo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/alirezamirian/angular-material-lightbox",
+  "authors": [
+    "Alireza Mirian <alireza.mirian@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~1.1.0"
+  }
+}

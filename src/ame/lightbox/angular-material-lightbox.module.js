@@ -6,7 +6,6 @@
 (function(angular){
     "use strict";
 
-
     angular.module("ame.lightbox", [
         'ngMaterial'
     ])

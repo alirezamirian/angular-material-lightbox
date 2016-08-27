@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="{{$root.dir}}" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Material Lightbox Demo</title>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+
+    <script src="../dist/angular-material-lightbox.js"></script>
+    <script src="demo.js"></script>
+
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="../dist/angular-material-lightbox.css" />
+</head>
+<body ng-controller="MainController as ctrl">
+    <md-button ng-click="ctrl.showDemo($event);">Show demo</md-button>
+    <md-button ng-click="ctrl.changeDir();">Change Page Direction</md-button>
+</body>
+</html>
