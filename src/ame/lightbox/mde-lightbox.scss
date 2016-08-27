@@ -2,8 +2,8 @@
 $animationDuration: .2s;
 .mde-lightbox {
   overflow: visible;
-  max-height: 100%;
-  max-width: 100%;
+  max-height: calc(100% - 30px);
+  max-width: calc(100% - 30px);
   min-width: 100px;
   min-height: 100px;
   padding: 10px;
@@ -53,6 +53,10 @@ $animationDuration: .2s;
     position: relative;
     top: 60px;
     transform: scale(.8);
+    white-space: nowrap;
+    overflow-x: auto;
+    padding-top: 30px;
+    margin-top: -60px;
     md-radio-group{
       display: block;
       width: 100%;
