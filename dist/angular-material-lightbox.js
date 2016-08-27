@@ -197,13 +197,13 @@
         }
         function _keypressHandler(event){
             if(event){
-                switch(event.code){
-                    case "ArrowLeft":
-                    case "ArrowDown":
+                switch(event.keyCode){
+                    case 37: //"ArrowLeft":
+                    case 40: //"ArrowDown":
                         $scope.$apply(prev);
                         break;
-                    case "ArrowRight":
-                    case "ArrowUp":
+                    case 39: //"ArrowRight":
+                    case 38: //"ArrowUp":
                         $scope.$apply(next);
                         break;
                 }
