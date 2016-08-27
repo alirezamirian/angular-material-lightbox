@@ -13,10 +13,12 @@
         </div>
     </md-dialog-content>
 
-    <md-button aria-label="Next" hide-xs class="md-icon-button _next" ng-click="ctrl.next()">
+    <md-button ng-class="ctrl.options.buttonClass" aria-label="Next" hide-xs
+               class="md-icon-button _next" ng-click="ctrl.next()">
         <md-icon md-svg-icon="ame/lightbox/icons/ic_chevron_left_black_24px.svg"/>
     </md-button>
-    <md-button aria-label="Prev" hide-xs class="md-icon-button _prev" ng-click="ctrl.prev()">
+    <md-button ng-class="ctrl.options.buttonClass" aria-label="Prev" hide-xs
+               class="md-icon-button _prev" ng-click="ctrl.prev()">
         <md-icon md-svg-icon="ame/lightbox/icons/ic_chevron_left_black_24px.svg"/>
     </md-button>
 </md-dialog>

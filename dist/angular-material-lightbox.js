@@ -1,5 +1,5 @@
 /*
- * ame-lightbox 0.0.2
+ * ame-lightbox 0.0.3
  * Lightbox component on top of angular material
  * https://github.com/alirezamirian/angular-material-lightbox
 */
@@ -50,7 +50,8 @@
     var defaults = {
         initialIndex: 0,
         keyboard: true,
-        targetEvent: undefined
+        targetEvent: undefined,
+        buttonClass: ""
     };
 
     function ameLightboxFactory($mdDialog) {
@@ -100,6 +101,7 @@
             return;
         }
         self.loading = true;
+        self.options = options;
         self.imageLoaded = imageLoaded;
         self.currentIndex = Math.max(Math.min(options.initialIndex || 0,items.length-1), 0);
         self.prev = prev;
@@ -236,10 +238,12 @@ module.run(['$templateCache', function($templateCache) {
     '        </div>\n' +
     '    </md-dialog-content>\n' +
     '\n' +
-    '    <md-button aria-label="Next" hide-xs class="md-icon-button _next" ng-click="ctrl.next()">\n' +
+    '    <md-button ng-class="ctrl.options.buttonClass" aria-label="Next" hide-xs\n' +
+    '               class="md-icon-button _next" ng-click="ctrl.next()">\n' +
     '        <md-icon md-svg-icon="ame/lightbox/icons/ic_chevron_left_black_24px.svg"/>\n' +
     '    </md-button>\n' +
-    '    <md-button aria-label="Prev" hide-xs class="md-icon-button _prev" ng-click="ctrl.prev()">\n' +
+    '    <md-button ng-class="ctrl.options.buttonClass" aria-label="Prev" hide-xs\n' +
+    '               class="md-icon-button _prev" ng-click="ctrl.prev()">\n' +
     '        <md-icon md-svg-icon="ame/lightbox/icons/ic_chevron_left_black_24px.svg"/>\n' +
     '    </md-button>\n' +
     '</md-dialog>\n' +

@@ -15,7 +15,6 @@
     function MainController(ameLightbox, $rootScope){
         var self = this;
 
-
         self.showDemo = showDemo;
         self.changeDir = changeDir;
 
@@ -31,7 +30,8 @@
                     'https://cdn.myket.ir/images/xlarge/image/myket/screenshot/com.sevensen.royesh_cdbe9f13-ed44-4f7e-a2e8-76308f901ff7.png'
                 ], {
                 targetEvent: targetEvent,
-                initialIndex: 1
+                initialIndex: 1,
+                buttonClass: "md-raised"
             })
         }
     }

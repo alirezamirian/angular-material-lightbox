@@ -14,7 +14,8 @@
     var defaults = {
         initialIndex: 0,
         keyboard: true,
-        targetEvent: undefined
+        targetEvent: undefined,
+        buttonClass: ""
     };
 
     function ameLightboxFactory($mdDialog) {
