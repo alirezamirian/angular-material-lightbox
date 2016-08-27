@@ -196,17 +196,19 @@
             $document.unbind("keydown", _keypressHandler);
         }
         function _keypressHandler(event){
-            if(event){
-                switch(event.keyCode){
-                    case 37: //"ArrowLeft":
-                    case 40: //"ArrowDown":
-                        $scope.$apply(prev);
-                        break;
-                    case 39: //"ArrowRight":
-                    case 38: //"ArrowUp":
-                        $scope.$apply(next);
-                        break;
-                }
+            var fn = null;
+            switch(event.keyCode){
+                case 37: //"ArrowLeft":
+                case 40: //"ArrowDown":
+                    fn = document.dir == "rtl" ? next : prev;
+                    break;
+                case 39: //"ArrowRight":
+                case 38: //"ArrowUp":
+                    fn = document.dir == "rtl" ? prev : next;
+                    break;
+            }
+            if(fn){
+                $scope.$apply(fn)
             }
         }
         function _cleanup(){
