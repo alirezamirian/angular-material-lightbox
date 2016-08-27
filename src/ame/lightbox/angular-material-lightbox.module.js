@@ -7,7 +7,13 @@
     "use strict";
 
     angular.module("ame.lightbox", [
-        'ngMaterial'
+        'material.core',
+        'material.components.dialog',
+        'material.components.button',
+        'material.components.radioButton',
+        'material.components.progressCircular',
+        'material.components.swipe',
+        'material.components.icon'
     ])
 
 })(angular);
