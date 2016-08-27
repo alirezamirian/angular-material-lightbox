@@ -1,5 +1,5 @@
 {
-  "name": "angular-material-lightbox",
+  "name": "ame-lightbox",
   "version": "0.0.1",
   "description": "Lightbox component on top of angular material",
   "main": "index.js",

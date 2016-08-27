@@ -10,7 +10,7 @@ TODO
 
 ## Installation
 ```bash
-bower install angular-material-lightbox --save
+bower install ame-lightbox --save
 ```
 
 ## Build 
