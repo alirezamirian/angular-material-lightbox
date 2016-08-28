@@ -130,6 +130,7 @@
             }
             if (fn) {
                 event.stopPropagation();
+                event.preventDefault();
                 $scope.$apply(fn);
             }
         }
