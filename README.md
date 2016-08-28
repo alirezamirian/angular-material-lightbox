@@ -1,6 +1,8 @@
 # Angular Material Extensions - Lightbox
 Lightbox component on top of angular material.
 
+## Demo
+https://alirezamirian.github.io/angular-material-lightbox/demo/
 ## Usage
 Add dependency:
 ``` js
