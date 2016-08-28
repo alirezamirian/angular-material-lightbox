@@ -14,10 +14,6 @@
     "tests"
   ],
   "dependencies": {
-    "angular-material": "~1.1.0",
     "ng-prettyjson": "~0.2.0"
-  },
-  "resolutions": {
-    "angular": "1.5.8"
   }
 }
