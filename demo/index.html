@@ -10,15 +10,66 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/ng-prettyjson/dist/ng-prettyjson.min.js"></script>
 
     <script src="../dist/angular-material-lightbox.js"></script>
     <script src="demo.js"></script>
 
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="bower_components/ng-prettyjson/src/ng-prettyjson.css" />
     <link rel="stylesheet" href="../dist/angular-material-lightbox.css" />
 </head>
-<body ng-controller="MainController as ctrl">
-    <md-button ng-click="ctrl.showDemo($event);">Show demo</md-button>
-    <md-button ng-click="ctrl.changeDir();">Change Page Direction</md-button>
+<body ng-controller="MainController as ctrl" layout="column">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h1>Angular Material Extensions - Lightbox</h1>
+            <span flex></span>
+            <md-button class="md-icon-button">
+                <md-icon md-svg-icon="assets/images/github.svg"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <div layout="row" layout-align="center" style="margin: auto; width: 100%">
+
+        <md-content class="md-padding md-whiteframe-1dp" flex="90" flex-gt-md="50">
+            <div layout="row">
+                <div layout="column" flex ng-form="optionsForm">
+                    <h1 class="md-title">Options</h1>
+                    <md-checkbox ng-model="ctrl.options.keyboard">Keyboard Navigation</md-checkbox>
+                    <md-checkbox ng-model="ctrl.options.showDots">Show Dots</md-checkbox>
+                    <md-checkbox ng-model="ctrl.options.targetEvent">Use Target Event</md-checkbox>
+                    <md-input-container>
+                        <label>Button Classes</label>
+                        <md-select ng-model="ctrl.options.buttonClass" multiple>
+                            <md-option value="md-raised">md-raised</md-option>
+                            <md-option value="md-accent">md-accent</md-option>
+                            <md-option value="md-primary">md-primary</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Initial index</label>
+                        <input ng-model="ctrl.options.initialIndex" name="initialIndex" type="number"
+                               min="0" max="{{ctrl.items.length-1}}" />
+                        <div ng-messages="optionsForm.initialIndex.$error">
+                            <div ng-message="min">Indices are zero-based</div>
+                            <div ng-message="max">Total number of images is {{ctrl.items.length}}</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <p>Page Direction</p>
+                    <md-radio-group ng-model="$root.dir">
+                        <md-radio-button value="rtl">Right to left</md-radio-button>
+                        <md-radio-button value="ltr">Left to right</md-radio-button>
+                    </md-radio-group>
+                </div>
+            </div>
+            <div layout="row" layout-align="end">
+                <md-button class="md-raised" ng-click="ctrl.resetOptions();">Reset options</md-button>
+                <md-button class="md-primary md-raised" ng-click="ctrl.showDemo($event);">Show demo</md-button>
+            </div>
+        </md-content>
+    </div>
 </body>
 </html>
