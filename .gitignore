@@ -48,3 +48,5 @@ crashlytics-build.properties
 
 node_modules
 **/bower_components/
+!/docs/demo/bower_components/ng-prettyjson/dist/ng-prettyjson.min.css
+!/docs/demo/bower_components/ng-prettyjson/dist/ng-prettyjson.min.js
