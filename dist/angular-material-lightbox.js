@@ -1,5 +1,5 @@
 /*
- * ame-lightbox 0.0.3
+ * ame-lightbox 0.0.6
  * Lightbox component on top of angular material
  * https://github.com/alirezamirian/angular-material-lightbox
 */
@@ -43,16 +43,17 @@
 (function(angular) {
     "use strict";
 
-    angular.module("ame.lightbox")
-
-        .factory("ameLightbox", ameLightboxFactory);
-
     var defaults = {
+        buttonClass: "",
         initialIndex: 0,
         keyboard: true,
-        targetEvent: undefined,
-        buttonClass: ""
+        showDots: true,
+        targetEvent: undefined
     };
+
+    angular.module("ame.lightbox")
+        .constant("ameLightboxDefaults", defaults)
+        .factory("ameLightbox", ameLightboxFactory);
 
     function ameLightboxFactory($mdDialog) {
         return {
@@ -63,12 +64,13 @@
         function show(items, options) {
             items   = items || [];
             options = angular.extend({}, defaults, options);
-            
+
             $mdDialog.show({
                 templateUrl: "ame/lightbox/dialog-lightbox.html",
                 controller: "AmeLightboxController",
                 controllerAs: "ctrl",
                 targetEvent: options.targetEvent,
+                clickOutsideToClose: true,
                 locals: {
                     items: items.map(_normalizeItem),
                     options: options
@@ -208,6 +210,7 @@
                     break;
             }
             if(fn){
+                event.stopPropagation();
                 $scope.$apply(fn)
             }
         }
@@ -232,7 +235,7 @@ module.run(['$templateCache', function($templateCache) {
     '            <img ame-on-load="ctrl.imageLoaded()"\n' +
     '                 ng-show="!ctrl.loading && !ctrl.resizing" ng-src="{{ctrl.items[ctrl.currentIndex].src}}"/>\n' +
     '        </div>\n' +
-    '        <div layout="row" class="_dots">\n' +
+    '        <div layout="row" class="_dots" ng-show="ctrl.options.showDots">\n' +
     '            <md-radio-group ng-model="ctrl.currentIndex">\n' +
     '                <md-radio-button ng-repeat="item in ctrl.items" ng-value=":: $index"\n' +
     '                                 aria-label="Image {{:: $index}}"></md-radio-button>\n' +

@@ -5,7 +5,7 @@
             <img ame-on-load="ctrl.imageLoaded()"
                  ng-show="!ctrl.loading && !ctrl.resizing" ng-src="{{ctrl.items[ctrl.currentIndex].src}}"/>
         </div>
-        <div layout="row" class="_dots">
+        <div layout="row" class="_dots" ng-show="ctrl.options.showDots">
             <md-radio-group ng-model="ctrl.currentIndex">
                 <md-radio-button ng-repeat="item in ctrl.items" ng-value=":: $index"
                                  aria-label="Image {{:: $index}}"></md-radio-button>

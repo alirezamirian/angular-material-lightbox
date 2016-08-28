@@ -7,16 +7,17 @@
 (function(angular) {
     "use strict";
 
-    angular.module("ame.lightbox")
-
-        .factory("ameLightbox", ameLightboxFactory);
-
     var defaults = {
+        buttonClass: "",
         initialIndex: 0,
         keyboard: true,
-        targetEvent: undefined,
-        buttonClass: ""
+        showDots: true,
+        targetEvent: undefined
     };
+
+    angular.module("ame.lightbox")
+        .constant("ameLightboxDefaults", defaults)
+        .factory("ameLightbox", ameLightboxFactory);
 
     function ameLightboxFactory($mdDialog) {
         return {
@@ -27,12 +28,13 @@
         function show(items, options) {
             items   = items || [];
             options = angular.extend({}, defaults, options);
-            
+
             $mdDialog.show({
                 templateUrl: "ame/lightbox/dialog-lightbox.html",
                 controller: "AmeLightboxController",
                 controllerAs: "ctrl",
                 targetEvent: options.targetEvent,
+                clickOutsideToClose: true,
                 locals: {
                     items: items.map(_normalizeItem),
                     options: options
