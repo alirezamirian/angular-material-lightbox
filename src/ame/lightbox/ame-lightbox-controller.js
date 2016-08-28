@@ -126,6 +126,7 @@
                     break;
             }
             if(fn){
+                event.stopPropagation();
                 $scope.$apply(fn)
             }
         }
