@@ -28,6 +28,8 @@ TODO
   targetEvent: undefined, // to be passed to $mdDialog
   buttonClass: "", // a list of classes to be added to navigation buttons
   keyboard: true, // keyboard navigation
+  showDots: true, // whether to show dots or not
+  backdropOpacity: null, // default to $mdDialog defaults
 }
 ```
 
