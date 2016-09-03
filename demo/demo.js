@@ -16,10 +16,10 @@
         var self = this;
         resetOptions();
         self.items = [
-            'https://cdn.myket.ir/images/xlarge/image/myket/screenshot/com.google.android.street_4.png',
-            'https://cdn.myket.ir/images/xlarge/image/myket/screenshot/com.thisgameiscreatedalonebyme.Unpaid_Thief_6_62309618-0dc4-4c59-9680-23b11740c663.png',
-            'https://s.cafebazaar.ir/1/upload/screenshot/com.glimgames.motori24.jpg',
-            'https://cdn.myket.ir/images/xlarge/image/myket/screenshot/com.sevensen.royesh_cdbe9f13-ed44-4f7e-a2e8-76308f901ff7.png'
+            'http://placehold.it/350x150',
+            'http://placehold.it/400x800',
+            'http://placehold.it/1200x768',
+            'http://placehold.it/500x100'
         ];
 
         self.showDemo = showDemo;
