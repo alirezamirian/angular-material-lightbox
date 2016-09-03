@@ -44,3 +44,8 @@ bower install ame-lightbox --save
 npm install
 gulp build
 ```
+
+## TODO
+- [ ] Add directive
+- [ ] make it fullscreen on small screens
+- [ ] change dots size and functionality in small screens
