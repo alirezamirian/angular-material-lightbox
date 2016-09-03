@@ -12,6 +12,7 @@
         initialIndex: 0,
         keyboard: true,
         showDots: true,
+        backdropOpacity: null, // $mdDialog default
         targetEvent: undefined
     };
 
@@ -19,7 +20,7 @@
         .constant("ameLightboxDefaults", defaults)
         .factory("ameLightbox", ameLightboxFactory);
 
-    function ameLightboxFactory($mdDialog) {
+    function ameLightboxFactory($mdDialog, $timeout) {
         return {
             show: show
         };
@@ -35,6 +36,13 @@
                 controllerAs: "ctrl",
                 targetEvent: options.targetEvent,
                 clickOutsideToClose: true,
+                onShowing: function(){
+                    $timeout(function(){
+                        if(angular.isNumber(options.backdropOpacity)){
+                            document.getElementsByClassName("md-dialog-backdrop")[0].style.opacity = options.backdropOpacity;
+                        }
+                    });
+                },
                 locals: {
                     items: items.map(_normalizeItem),
                     options: options

@@ -56,6 +56,15 @@
                             <div ng-message="max">Total number of images is {{ctrl.items.length}}</div>
                         </div>
                     </md-input-container>
+                    <md-input-container>
+                        <label>Backdrop Opacity</label>
+                        <input ng-model="ctrl.options.backdropOpacity" name="backdropOpacity" type="number"
+                               min="0" max="1" />
+                        <div ng-messages="optionsForm.backdropOpacity.$error">
+                            <div ng-message="min">Negative opacity?!</div>
+                            <div ng-message="max">Opacity should be between 0 and 1</div>
+                        </div>
+                    </md-input-container>
                 </div>
                 <div flex>
                     <p>Page Direction</p>
