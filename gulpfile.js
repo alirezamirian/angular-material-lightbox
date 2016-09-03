@@ -63,7 +63,8 @@ function buildJs(){
             objectMode: true
         },
         gulp.src(srcPath + "/**/*.js")
-            .pipe($.angularFilesort()),
+            .pipe($.angularFilesort())
+            .pipe($.ngAnnotate()),
         getHtmlAndSvgJsStream()
     )
         .pipe($.plumber())

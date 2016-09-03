@@ -43,6 +43,7 @@
 (function(angular) {
     "use strict";
 
+    ameLightboxFactory.$inject = ["$mdDialog", "$timeout"];
     var defaults = {
         buttonClass: "",
         initialIndex: 0,
@@ -99,6 +100,7 @@
 (function(angular) {
     "use strict";
 
+    AmeLightboxController.$inject = ["items", "options", "$log", "$mdDialog", "$scope", "$document", "$timeout", "$mdMedia"];
     angular.module("ame.lightbox")
 
         .controller("AmeLightboxController", AmeLightboxController);
