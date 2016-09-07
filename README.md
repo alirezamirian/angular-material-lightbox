@@ -49,3 +49,4 @@ gulp build
 - [ ] Add directive
 - [ ] make it fullscreen on small screens
 - [ ] change dots size and functionality in small screens
+- [ ] show thumbnail when image is not loaded yet
