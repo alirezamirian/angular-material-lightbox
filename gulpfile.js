@@ -10,7 +10,7 @@ var streamqueue = require('streamqueue');
 
 var srcPath = "src";
 var distPath = "dist";
-var outputName = "angular-material-lightbox";
+var outputName = "ame-lightbox";
 
 var banner = '/*\n' +
     ' * <%= pkg.name %> <%= pkg.version %>\n' +

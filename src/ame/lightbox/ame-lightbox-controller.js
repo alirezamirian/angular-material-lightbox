@@ -59,7 +59,7 @@
         }
 
         function resize() {
-            var imgContainer   = document.getElementById("mde_lightbox_image");
+            var imgContainer   = document.getElementById("ame_lightbox_image");
             var img            = imgContainer.getElementsByTagName("img")[0];
             var containingArea = getContainingArea();
 

@@ -1,5 +1,5 @@
 /*
- * ame-lightbox 0.0.7
+ * ame-lightbox 0.0.8
  * Lightbox component on top of angular material
  * https://github.com/alirezamirian/angular-material-lightbox
 */
@@ -153,7 +153,7 @@
         }
 
         function resize() {
-            var imgContainer   = document.getElementById("mde_lightbox_image");
+            var imgContainer   = document.getElementById("ame_lightbox_image");
             var img            = imgContainer.getElementsByTagName("img")[0];
             var containingArea = getContainingArea();
 
@@ -243,10 +243,10 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('ame/lightbox/dialog-lightbox.html',
-    '<md-dialog class="mde-lightbox" aria-label="Images" ng-class="{\'_loading\': ctrl.loading}">\n' +
+    '<md-dialog class="ame-lightbox" aria-label="Images" ng-class="{\'_loading\': ctrl.loading}">\n' +
     '    <md-dialog-content>\n' +
     '        <md-progress-circular ng-if="ctrl.loading"></md-progress-circular>\n' +
-    '        <div id="mde_lightbox_image" md-swipe-left="ctrl.prev()" md-swipe-right="ctrl.next()">\n' +
+    '        <div id="ame_lightbox_image" md-swipe-left="ctrl.prev()" md-swipe-right="ctrl.next()">\n' +
     '            <img ame-on-load="ctrl.imageLoaded()"\n' +
     '                 ng-show="!ctrl.loading && !ctrl.resizing" ng-src="{{ctrl.items[ctrl.currentIndex].src}}"/>\n' +
     '        </div>\n' +

@@ -1,6 +1,6 @@
 @import '../../../node_modules/sass-bidi/main';
 $animationDuration: .2s;
-.mde-lightbox {
+.ame-lightbox {
   overflow: visible;
   max-height: calc(100% - 30px);
   max-width: calc(100% - 30px);
@@ -23,7 +23,7 @@ $animationDuration: .2s;
     @include bidi-value(transform, none, rotateY(180deg));
     @include bidi-prop(left, right, -70px);
   }
-  #mde_lightbox_image{
+  #ame_lightbox_image {
     transition: width $animationDuration ease, height $animationDuration ease;
     display: block;
     margin: auto;

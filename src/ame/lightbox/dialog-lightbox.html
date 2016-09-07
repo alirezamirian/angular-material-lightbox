@@ -1,7 +1,7 @@
-<md-dialog class="mde-lightbox" aria-label="Images" ng-class="{'_loading': ctrl.loading}">
+<md-dialog class="ame-lightbox" aria-label="Images" ng-class="{'_loading': ctrl.loading}">
     <md-dialog-content>
         <md-progress-circular ng-if="ctrl.loading"></md-progress-circular>
-        <div id="mde_lightbox_image" md-swipe-left="ctrl.prev()" md-swipe-right="ctrl.next()">
+        <div id="ame_lightbox_image" md-swipe-left="ctrl.prev()" md-swipe-right="ctrl.next()">
             <img ame-on-load="ctrl.imageLoaded()"
                  ng-show="!ctrl.loading && !ctrl.resizing" ng-src="{{ctrl.items[ctrl.currentIndex].src}}"/>
         </div>
