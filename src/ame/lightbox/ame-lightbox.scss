@@ -66,4 +66,13 @@ $animationDuration: .2s;
       display: inline-block;
     }
   }
+  .md-button:not(.md-raised),
+  .md-button:not(.md-primary),
+  .md-button:not(.md-warn),
+  .md-button:not(.md-accent)
+  {
+    md-icon{
+      color: #eee;
+    }
+  }
 }
