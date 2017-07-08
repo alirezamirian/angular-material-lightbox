@@ -1,5 +1,5 @@
 /*
- * ame-lightbox 0.0.8
+ * ame-lightbox 0.0.9
  * Lightbox component on top of angular material
  * https://github.com/alirezamirian/angular-material-lightbox
 */
@@ -136,13 +136,16 @@
             self.currentIndex = (index >= 0 ? index : index + items.length) % items.length;
         }
 
-        $scope.$watch(function() {
+        $scope.$watch(function () {
             return self.currentIndex;
-        }, function(currentIndex) {
+        }, function (currentIndex, prevIndex) {
             if (angular.isDefined(currentIndex)) {
-                self.loading = true;
+                if(angular.isDefined(prevIndex) && prevIndex !== currentIndex &&
+                    self.items[currentIndex] !== self.items[currentIndex]){
+                    self.loading = true;
+                }
             }
-        })
+        });
 
         function imageLoaded() {
             self.loading  = false;
@@ -279,7 +282,7 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('ame/lightbox/icons/ic_chevron_left_black_24px.svg',
-    '<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">\n' +
+    '<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">\n' +
     '    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>\n' +
     '    <path d="M0 0h24v24H0z" fill="none"/>\n' +
     '</svg>');

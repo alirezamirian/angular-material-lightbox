@@ -22,15 +22,43 @@
   transform: rotateY(180deg);
 }
 
-html[dir=rtl] .ame-lightbox ._next {
+[dir=rtl] .ame-lightbox ._next {
   transform: none;
 }
 
-html[dir=ltr] .ame-lightbox ._next {
+[dir=rtl] [dir=ltr] .ame-lightbox ._next {
+  transform: rotateY(180deg);
+}
+
+.ame-lightbox ._next[dir=rtl] {
+  transform: none;
+}
+
+[dir=rtl] .ame-lightbox ._next[dir=ltr] {
+  transform: rotateY(180deg);
+}
+
+:host-context([dir=rtl]) .ame-lightbox ._next {
+  transform: none;
+}
+
+[dir=ltr] .ame-lightbox ._next:not([dir=rtl]),
+[dir=rtl] [dir=ltr] .ame-lightbox ._next:not([dir=rtl]),
+.ame-lightbox ._next[dir=ltr] {
   right: -70px;
 }
 
-html[dir=rtl] .ame-lightbox ._next {
+[dir=rtl] .ame-lightbox ._next:not([dir=ltr]),
+[dir=ltr] [dir=rtl] .ame-lightbox ._next:not([dir=ltr]),
+.ame-lightbox ._next[dir=rtl] {
+  left: -70px;
+}
+
+:host-context([dir=ltr]) .ame-lightbox ._next:not([dir=rtl]) {
+  right: -70px;
+}
+
+:host-context([dir=rtl]) .ame-lightbox ._next:not([dir=ltr]) {
   left: -70px;
 }
 
@@ -38,15 +66,43 @@ html[dir=rtl] .ame-lightbox ._next {
   transform: none;
 }
 
-html[dir=rtl] .ame-lightbox ._prev {
+[dir=rtl] .ame-lightbox ._prev {
   transform: rotateY(180deg);
 }
 
-html[dir=ltr] .ame-lightbox ._prev {
+[dir=rtl] [dir=ltr] .ame-lightbox ._prev {
+  transform: none;
+}
+
+.ame-lightbox ._prev[dir=rtl] {
+  transform: rotateY(180deg);
+}
+
+[dir=rtl] .ame-lightbox ._prev[dir=ltr] {
+  transform: none;
+}
+
+:host-context([dir=rtl]) .ame-lightbox ._prev {
+  transform: rotateY(180deg);
+}
+
+[dir=ltr] .ame-lightbox ._prev:not([dir=rtl]),
+[dir=rtl] [dir=ltr] .ame-lightbox ._prev:not([dir=rtl]),
+.ame-lightbox ._prev[dir=ltr] {
   left: -70px;
 }
 
-html[dir=rtl] .ame-lightbox ._prev {
+[dir=rtl] .ame-lightbox ._prev:not([dir=ltr]),
+[dir=ltr] [dir=rtl] .ame-lightbox ._prev:not([dir=ltr]),
+.ame-lightbox ._prev[dir=rtl] {
+  right: -70px;
+}
+
+:host-context([dir=ltr]) .ame-lightbox ._prev:not([dir=rtl]) {
+  left: -70px;
+}
+
+:host-context([dir=rtl]) .ame-lightbox ._prev:not([dir=ltr]) {
   right: -70px;
 }
 
@@ -54,7 +110,7 @@ html[dir=rtl] .ame-lightbox ._prev {
   transition: width 0.2s ease, height 0.2s ease;
   display: block;
   margin: auto;
-  min-height: 70px;
+  min-height: 90px;
 }
 
 .ame-lightbox #ame_lightbox_image img {
@@ -101,4 +157,11 @@ html[dir=rtl] .ame-lightbox ._prev {
 
 .ame-lightbox ._dots md-radio-button {
   display: inline-block;
+}
+
+.ame-lightbox .md-button:not(.md-raised) md-icon,
+.ame-lightbox .md-button:not(.md-primary) md-icon,
+.ame-lightbox .md-button:not(.md-warn) md-icon,
+.ame-lightbox .md-button:not(.md-accent) md-icon {
+  color: #eee;
 }
