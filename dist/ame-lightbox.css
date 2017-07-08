@@ -159,9 +159,6 @@
   display: inline-block;
 }
 
-.ame-lightbox .md-button:not(.md-raised) md-icon,
-.ame-lightbox .md-button:not(.md-primary) md-icon,
-.ame-lightbox .md-button:not(.md-warn) md-icon,
-.ame-lightbox .md-button:not(.md-accent) md-icon {
+.ame-lightbox .md-button:not(.md-raised):not(.md-accent):not(.md-primary):not(.md-warn) md-icon {
   color: #eee;
 }

@@ -1,5 +1,5 @@
 /*
- * ame-lightbox 0.0.9
+ * ame-lightbox 0.0.10
  * Lightbox component on top of angular material
  * https://github.com/alirezamirian/angular-material-lightbox
 */
